@@ -7,7 +7,8 @@
 :key:  **个人访问令牌**
 
 - 创建：Settings (点击右上角头像) > Developer settings > Personal access tokens > Tokens (classic) > Generate new token > Generate new token (classic)      
-  - 只勾选仓库权限
+  - 勾选 `repo` 与 `workflow` 两项权限
+  - 注意：只勾 `repo` 时，若公共仓库含有 `.github/workflows/` 下的文件，推送会被拒绝，报错 `refusing to allow a Personal Access Token to create or update workflow ... without 'workflow' scope`
   - <details>
       <summary>查看截图</summary>
 
@@ -15,7 +16,7 @@
     </details>
 - 配置：Settings > Secrets and variables > Actions > Secrets > New repository secret
   - 变量名：`TOKEN`
-  - 变量值：拥有仓库权限的个人访问令牌
+  - 变量值：拥有 `repo` 与 `workflow` 权限的个人访问令牌
   - <details>
       <summary>查看截图</summary>
       
